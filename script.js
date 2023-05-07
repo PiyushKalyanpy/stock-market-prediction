@@ -54,7 +54,7 @@ const getSentiment = async (sentiment_value) => {
   } else if (sentiment_value < 0.0) {
     sentimentValues = {
       bgColor: "bg-red-50",
-      text: "Positive",
+      text: "Negative",
       textColor: "text-red-500",
     };
   } else {
