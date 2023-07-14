@@ -22,10 +22,11 @@ models = {
 def prediction(model, data):
     input_array = np.array(data).reshape(1, -1)
     data = eval(input_array[0][0]['predictions'])
-    open = data['Open']['1683259200000']
-    close = data['Close']['1683259200000']
-    low = data['Low']['1683259200000']
-    high = data['High']['1683259200000']
+    print("data", data)
+    open = data['Open']['1689307200000']
+    close = data['Close']['1689307200000']
+    low = data['Low']['1689307200000']
+    high = data['High']['1689307200000']
     todays_data = pd.DataFrame({'Open': [open], 'Close': [close], 'Low': [low], 'High': [high]})
     predictions = model.predict(todays_data)
     return predictions.tolist()

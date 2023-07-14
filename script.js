@@ -9,7 +9,8 @@ const companyNames = {
 };
 
 const predict = async (company_name) => {
-  await fetch(`http://127.0.0.1:5000/predict/${company_name}`, {
+  // await fetch(`http://127.0.0.1:5000/predict/${company_name}`, {
+  await fetch(`http://127.0.0.1:5000/predict/AMZN`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -17,6 +18,7 @@ const predict = async (company_name) => {
   })
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       document.getElementById("company_name").innerHTML =
         companyNames[company_name];
       document.getElementById("company_tag").innerHTML = company_name;
